@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+body{
+    background-color: #070620;
+}
+    h2 {
+        color: #fff;
+        
+    
+    }
+ .text-claire{
+        color: #bec9e7;
+        font-size:15px;
+}
+.pricing{
+    background-color: #35335e;
+ 
+}
+ .text-claire-pricing
+{
+    color: #bec9e7;
+        font-size: x-small;
+}
+.n-8{
+    background-color: #081131;
+}
+
+
+.p-1 {
+    color:  #D6E4FE;
+ }.pn-2 {
+    color:  #689eff;
+ }.pn-3 {
+    background-color:#0059f7;
+ }.p-4 {
+    color:  #00388f;
+ }.p-5 {
+    color:  #001a57;
+ }
+   
+  .n-1 {
+   color:  #FFFFFF;
+  }.n-2 {
+    color:  #f4f7ff;
+   }.n-3 {
+    color:  #ccd2e9;
+   }.n-5 {
+    color:#7e8bb6;
+   }.n-6 {
+   background-color:  #4e5a85;
+   }.n-7 {
+   background-color:#162044;
+   }
+  .n-9 {
+    background-color:  #070e27;
+   }
+   
+ .stroke-1 {
+    color:  #1c243f;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
