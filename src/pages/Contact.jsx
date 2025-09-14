@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuth } from "./Hook/useAuth";
+import { useAuth } from "../Hook/useAuth";
 
 const Contact = () => {
   const [form, setForm] = useState({

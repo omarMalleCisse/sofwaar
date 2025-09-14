@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './Hook/AuthProvider';
 import { ProtectedRoute } from './Components/ProtectedRoute';
-import Contact from './Contact';
+import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { Header } from "./Components/Header";
