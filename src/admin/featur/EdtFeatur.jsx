@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useParams, useNavigate } from "react-router-dom";
 
 const EdtFeatur = () => {
@@ -20,14 +21,14 @@ const EdtFeatur = () => {
       setFetching(true);
       setError("");
       try {
-        const response = await fetch(`http://localhost:8000/features/${featureId}`);
+  const response = await fetch(`${API_URL}/features/${featureId}`);
         if (response.ok) {
           const data = await response.json();
           setAlt(data.alt || "");
           setTitle(data.title || "");
           setText(data.text || "");
           if (data.image) {
-            setCurrentImageUrl(`http://localhost:8000/features/image/${data.image}`);
+            setCurrentImageUrl(`${API_URL}/features/image/${data.image}`);
           }
         } else {
           setError("Impossible de charger la feature");
@@ -51,7 +52,7 @@ const EdtFeatur = () => {
     if (title) formData.append("title", title);
     if (text) formData.append("text", text);
     try {
-      const response = await fetch(`http://localhost:8000/features/${featureId}`, {
+  const response = await fetch(`${API_URL}/features/${featureId}`, {
         method: "PATCH",
         body: formData,
       });

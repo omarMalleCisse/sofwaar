@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { Link } from 'react-router-dom';
 import TableGenerique from '../../Components/TableGenerique';
 
@@ -13,7 +14,7 @@ const UsersList = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch('http://localhost:8000/users/', {
+  const response = await fetch(`${API_URL}/users/`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',

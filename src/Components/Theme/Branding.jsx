@@ -1,6 +1,7 @@
 // ...existing code...
 
 import React, { useEffect, useState } from 'react';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { Container } from '../Container';
 import {animate, motion} from "framer-motion"
 
@@ -27,7 +28,7 @@ export const Branding = () => {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch("http://localhost:8000/branding/")
+    fetch(`${API_URL}/branding/`)
       .then((res) => {
         if (!res.ok) throw new Error("Erreur lors du chargement des logos");
         return res.json();
@@ -41,7 +42,7 @@ export const Branding = () => {
         setBranding([]);
         setLoading(false);
       });
-  }, []);
+  }, [API_URL]);
  
   return (
     <Container>
@@ -63,7 +64,7 @@ export const Branding = () => {
                 initial="initial"
                 animate="animate"
                 variants={iconVariants(1.5)}
-                src={brad.image ? `http://localhost:8000/branding/image/${brad.image}` : ''}
+                src={brad.image ? `${API_URL}/branding/image/${brad.image}` : ''}
                 alt={brad.name || 'branding'}
                 width={160}
                 height={90}

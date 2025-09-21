@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useNavigate, Link } from 'react-router-dom';
 
 const CreateUser = () => {
@@ -27,7 +29,7 @@ const CreateUser = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8000/users/', {
+  const response = await fetch(`${API_URL}/users/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

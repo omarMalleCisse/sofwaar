@@ -7,11 +7,12 @@ export const Features = () => {
     const [features, setFeatures] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+        const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 
     useEffect(() => {
         setLoading(true);
         setError(null);
-        fetch("http://localhost:8000/features/")
+            fetch(`${API_URL}/features/`)
             .then((res) => {
                 if (!res.ok) throw new Error("Erreur lors du chargement des features");
                 return res.json();
@@ -45,7 +46,7 @@ export const Features = () => {
                             key={feate.id}
                             className="m-2 border border-indigo-900 hover:bg-indigo-950 rounded-xl lg:rounded-2xl duration-300 ease-in-out p-8 space-y-2 cursor-pointer"
                         >
-                            <img src={`http://localhost:8000/branding/image/${feate.image}`} alt={feate.alt} width={48} height={48} />
+                                <img src={`${API_URL}/branding/image/${feate.image}`} alt={feate.alt} width={48} height={48} />
                             <h3 className="text-gray-50 font-bold-1">{feate.title}</h3>
                             <p className="text-gray-400">{feate.text}</p>
                         </div>

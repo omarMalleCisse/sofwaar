@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../Hook/usFetch";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useAuth } from "../../Hook/useAuth";
 
 const AddBulletPoint = () => {
@@ -13,7 +14,7 @@ const AddBulletPoint = () => {
   const [success, setSuccess] = useState("");
   const [currentImageUrl, setCurrentImageUrl] = useState("");
   const navigate = useNavigate();
-  const { refetch } = useFetch("http://localhost:8000/bulletpoints/");
+  const { refetch } = useFetch(`${API_URL}/bulletpoints/`);
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -28,7 +29,7 @@ const handleSubmit = async (e) => {
   if (image) formData.append("image", image);
 
   try {
-    const response = await fetch("http://localhost:8000/bulletpoints/", {
+  const response = await fetch(`${API_URL}/bulletpoints/`, {
       method: "POST",
       body: formData,
     });
@@ -62,7 +63,7 @@ const handleSubmit = async (e) => {
         {success && <div className="text-green-400 bg-green-200 p-3 rounded mb-4 text-center animate-bounce">{success}</div>}
         {currentImageUrl && (
           <div className="mb-4 flex flex-col items-center">
-            <img src={currentImageUrl.startsWith("http") ? currentImageUrl : `http://localhost:8000/${currentImageUrl}`} alt="image actuelle" className="h-20 object-contain mb-1 rounded" />
+            <img src={currentImageUrl.startsWith("http") ? currentImageUrl : `${API_URL}/${currentImageUrl}`} alt="image actuelle" className="h-20 object-contain mb-1 rounded" />
             <span className="text-blue-300 text-xs">Image actuelle</span>
           </div>
         )}

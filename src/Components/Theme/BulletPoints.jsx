@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { Container } from "../Container"
 import { Headings } from "./Headings"
 import { motion} from "framer-motion"
@@ -12,7 +13,7 @@ export const BulletPoint = () => {
     useEffect(() => {
         setLoading(true);
         setError(null);
-        fetch("http://localhost:8000/bulletpoints/")
+        fetch(`${API_URL}/bulletpoints/`)
             .then((res) => {
                 if (!res.ok) throw new Error("Erreur lors du chargement des bullet points");
                 return res.json();
@@ -26,7 +27,7 @@ export const BulletPoint = () => {
                 setBulletPoints([]);
                 setLoading(false);
             });
-    }, []);
+    }, [API_URL]);
 
     return <>
         <Headings title="Softwaar" subtitle="Ce que Softwaar fait pour vous" />
@@ -46,7 +47,7 @@ export const BulletPoint = () => {
                                 initial={{ opacity: 0, x: -100 }}
                                 transition={{ duration: 2.5 }}
                                 className="w-full flex justify-center lg:w-7/12">
-                                <img src={`http://localhost:8000/branding/image/${bullet.image}`} alt={bullet.alt} width={550} height={300} className="px-20 lg:px-0" />
+                                <img src={`${API_URL}/branding/image/${bullet.image}`} alt={bullet.alt} width={550} height={300} className="px-20 lg:px-0" />
                             </motion.div>
                             <motion.div
                                 initial={{ x: 100, opacity: 0 }}

@@ -1,18 +1,19 @@
 
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useFetch } from "../../Hook/usFetch";
 import { handleDelete } from "../../fonctions/handleDelete";
 import { useNavigate } from "react-router-dom";
 import TableGenerique from "../../Components/TableGenerique";
 
 export const ProduitsBranding = () => {
-  const { loading, data, errors, refetch } = useFetch("http://localhost:8000/branding/");
+  const { loading, data, errors, refetch } = useFetch(`${API_URL}/branding/`);
   const navigate = useNavigate();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
   const handleDeleteBranding = (branding) => {
-    handleDelete(`http://localhost:8000/branding/${branding.id}`, {
+  handleDelete(`${API_URL}/branding/${branding.id}`, {
       onSuccess: () => {
         setSuccess("Branding supprimé avec succès !");
         setTimeout(() => {

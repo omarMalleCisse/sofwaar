@@ -1,4 +1,5 @@
 import React from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useFetch } from "../../Hook/usFetch";
 import { handleDelete } from "../../fonctions/handleDelete";
 import { useNavigate } from "react-router-dom";
@@ -6,13 +7,13 @@ import TableGenerique from "../../Components/TableGenerique";
 import { useState } from "react";
 
 export const ProduitsFeaturs = () => {
-  const { loading, data, errors, refetch } = useFetch("http://localhost:8000/features/");
+  const { loading, data, errors, refetch } = useFetch(`${API_URL}/features/`);
   const navigate = useNavigate();
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
   const handleDeleteFeatures = (feature) => {
-        handleDelete(`http://localhost:8000/features/${feature.id}`, {
+  handleDelete(`${API_URL}/features/${feature.id}`, {
           onSuccess: () => {
             setSuccess("feature supprimé avec succès !");
             setTimeout(() => {

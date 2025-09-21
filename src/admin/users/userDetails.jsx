@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useParams, useNavigate } from 'react-router-dom';
 
 const UserDeails = () => {
@@ -14,7 +15,7 @@ const UserDeails = () => {
 
   const fetchUserDetail = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/users_single${id}/`, {
+  const response = await fetch(`${API_URL}/users_single${id}/`, {
         headers: {
           'Accept': 'application/json',
         },

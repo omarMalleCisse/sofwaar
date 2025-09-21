@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 /**
  * Fonction générique pour supprimer un élément via une route API DELETE
  * @param {string} url - URL complète de la route DELETE (ex: 'http://localhost:8000/branding/1')

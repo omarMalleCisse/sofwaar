@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EdtBranding = () => {
@@ -18,12 +19,12 @@ const EdtBranding = () => {
       setFetching(true);
       setError("");
       try {
-        const response = await fetch(`http://localhost:8000/branding/${brandingId}`);
+  const response = await fetch(`${API_URL}/branding/${brandingId}`);
         if (response.ok) {
           const data = await response.json();
           setName(data.name || "");
           if (data.image) {
-            setCurrentImageUrl(`http://localhost:8000/branding/image/${data.image}`);
+            setCurrentImageUrl(`${API_URL}/branding/image/${data.image}`);
           }
         } else {
           setError("Impossible de charger le branding");
@@ -45,7 +46,7 @@ const EdtBranding = () => {
     if (name) formData.append("name", name);
     if (image) formData.append("image", image);
     try {
-      const response = await fetch(`http://localhost:8000/branding/${brandingId}`, {
+  const response = await fetch(`${API_URL}/branding/${brandingId}`, {
         method: "PATCH",
         body: formData,
       });

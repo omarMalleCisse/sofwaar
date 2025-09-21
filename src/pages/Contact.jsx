@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useAuth } from "../Hook/useAuth";
 
 const Contact = () => {
@@ -30,7 +31,7 @@ const Contact = () => {
       formData.append("telephone", form.telephone);
       formData.append("adresse", form.adresse);
 
-      const response = await fetch("http://localhost:8000/register/", {
+  const response = await fetch(`${API_URL}/register/`, {
         method: "POST",
         body: formData,
         headers: {

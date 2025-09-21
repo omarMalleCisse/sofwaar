@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../../Hook/usFetch";
 
@@ -9,7 +10,7 @@ const AddBranding = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
-  const { refetch } = useFetch("http://localhost:8000/branding/");
+  const { refetch } = useFetch(`${API_URL}/branding/`);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const AddBranding = () => {
     formData.append("name", name);
     if (image) formData.append("image", image);
     try {
-      const response = await fetch("http://localhost:8000/branding/", {
+  const response = await fetch(`${API_URL}/branding/`, {
         method: "POST",
         body: formData,
       });

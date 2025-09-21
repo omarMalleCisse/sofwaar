@@ -1,17 +1,18 @@
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_REACT_APP_API_URL || "https://softapi-production-1253.up.railway.app";
 import { useFetch } from "../../Hook/usFetch";
 import { handleDelete } from "../../fonctions/handleDelete";
 import { useNavigate } from "react-router-dom";
 import TableGenerique from "../../Components/TableGenerique";
 
 export const ProduitsRealisation = () => {
-  const { loading, data, errors, refetch} = useFetch("http://localhost:8000/realisations");
+  const { loading, data, errors, refetch} = useFetch(`${API_URL}/realisations`);
   const navigate = useNavigate();
    const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
   
   const handleDeleteRealisation = (realisation) => {
-        handleDelete(`http://localhost:8000/realisations/${realisation.id}`, {
+  handleDelete(`${API_URL}/realisations/${realisation.id}`, {
           onSuccess: () => {
             setSuccess("feature supprimé avec succès !");
             setTimeout(() => {
@@ -37,9 +38,9 @@ export const ProduitsRealisation = () => {
             ...realisation,
             image: realisation.lien
               ? <a href={realisation.lien} target="_blank" rel="noopener noreferrer">
-                  <img src={`http://localhost:8000/branding/image/${realisation.image}`} alt={realisation.titre} style={{maxWidth: 80, maxHeight: 80}} />
+                  <img src={`${API_URL}/branding/image/${realisation.image}`} alt={realisation.titre} style={{maxWidth: 80, maxHeight: 80}} />
                 </a>
-              : <img src={`http://localhost:8000/branding/image/${realisation.image}`} alt={realisation.titre} style={{maxWidth: 80, maxHeight: 80}} />
+              : <img src={`${API_URL}/branding/image/${realisation.image}`} alt={realisation.titre} style={{maxWidth: 80, maxHeight: 80}} />
           }))}
           columns={[ 
             { key: "id", label: "ID" },
