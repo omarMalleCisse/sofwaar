@@ -39,9 +39,9 @@ const Portfolio = () => {
                 Voir mes projets
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border-2 border-purple-400 text-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300">
+              <a href="/contact" className="border-2 border-purple-400 text-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300 text-center">
                 Me contacter
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -56,8 +56,7 @@ const Portfolio = () => {
               <h2 className="text-4xl lg:text-5xl font-bold text-white">Ma Formation</h2>
             </div>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Mon parcours académique et professionnel qui m'a forgé en tant que développeur
-            </p>
+              Être autodidacte m’a transformé et fait évoluer en un développeur plus performant et passionné</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -66,11 +65,11 @@ const Portfolio = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <GraduationCap size={32} className="text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">Master en Informatique</h3>
-              <p className="text-purple-400 font-semibold mb-2">Université de Technologie</p>
+              <h3 className="text-2xl font-bold text-white mb-3">Développeur passionné et autodidacte</h3>
+              <p className="text-purple-400 font-semibold mb-2">formations continues et de projets stimulants</p>
               <p className="text-slate-300 mb-4">2022 - 2024</p>
               <p className="text-slate-400 leading-relaxed">
-                Spécialisation en développement web et mobile, intelligence artificielle et gestion de bases de données.
+                Spécialisation en développement web et mobile,et gestion de bases de données.
               </p>
             </div>
 
@@ -80,8 +79,8 @@ const Portfolio = () => {
                 <Code size={32} className="text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Bootcamp Full Stack</h3>
-              <p className="text-blue-400 font-semibold mb-2">École du Web</p>
-              <p className="text-slate-300 mb-4">2021 - 2022</p>
+              <p className="text-blue-400 font-semibold mb-2">formations en ligne</p>
+              <p className="text-slate-300 mb-4">2020 - 2023</p>
               <p className="text-slate-400 leading-relaxed">
                 Formation intensive en JavaScript, React, Node.js, bases de données et déploiement d'applications.
               </p>
@@ -94,9 +93,9 @@ const Portfolio = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Certifications</h3>
               <p className="text-green-400 font-semibold mb-2">Diverses plateformes</p>
-              <p className="text-slate-300 mb-4">2020 - 2024</p>
+              <p className="text-slate-300 mb-4">2020 - 2025</p>
               <p className="text-slate-400 leading-relaxed">
-                AWS Solutions Architect, Google Cloud Platform, MongoDB University, React Developer Certification.
+                 des certifications sur Coursera en React, Symfony, Tailwind, Python et création d’API
               </p>
             </div>
           </div>

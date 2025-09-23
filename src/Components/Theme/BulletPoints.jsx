@@ -30,7 +30,7 @@ export const BulletPoint = () => {
     }, [API_URL]);
 
     return <>
-        <Headings title="Softwaar" subtitle="Ce que Softwaar fait pour vous" />
+        <Headings title="Softwaar" subtitle="🔒 Sécurité. ⚡ Performance. 🤝 Simplicité." />
         <Container>
             <div className="w-full max-w-4xl mx-auto py-5 lg:py-10 space-y-10 lg:space-y-24">
                 <div>
