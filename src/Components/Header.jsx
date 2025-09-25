@@ -25,11 +25,21 @@ export const Header = () => {
     </a>
   );
 
-  // Composant bouton Login
-  const LoginButton = () => (
-    <Link to="/login">
-      <Button theme="primary" className="min-w-[60px] px-2 text-xs sm:text-sm">Login</Button>
-    </Link>
+  // Composant bouton Login/Logout
+  const AuthButton = () => (
+    user ? (
+      <Button
+        onClick={() => logout()}
+        theme="primary"
+        className="min-w-[60px] px-2 text-xs sm:text-sm"
+      >
+        Logout
+      </Button>
+    ) : (
+      <Link to="/login">
+        <Button theme="primary" className="min-w-[60px] px-2 text-xs sm:text-sm">Login</Button>
+      </Link>
+    )
   );
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -57,33 +67,18 @@ export const Header = () => {
           {/* Desktop navigation */}
           <div className="hidden lg:flex items-center gap-2 sm:gap-4 flex-nowrap overflow-x-auto w-full justify-end">
             <WhatsAppButton className="gap-2 px-3 py-2 font-semibold shadow transition" />
-            {user && (
-              <>
-                {isAdmin && (
-                  <Link to="/admin">
-                    <Button theme="primary" className="min-w-[60px] px-2 text-xs sm:text-sm">Admin</Button>
-                  </Link>
-                )}
-                <Button
-                  onClick={() => logout()}
-                  theme="primary"
-                  className="min-w-[60px] px-2 text-xs sm:text-sm"
-                >
-                  Logout
-                </Button>
-              </>
+            {isAdmin && user && (
+              <Link to="/admin">
+                <Button theme="primary" className="min-w-[60px] px-2 text-xs sm:text-sm">Admin</Button>
+              </Link>
             )}
-            {!user && <LoginButton />}
+            <AuthButton />
           </div>
 
-          {/* Mobile navigation (Login + WhatsApp) */}
+          {/* Mobile navigation (Login/Logout + WhatsApp) */}
           <div className="lg:hidden flex w-full justify-end items-center gap-2 mt-2">
-            {!user && (
-              <>
-                <LoginButton />
-                <WhatsAppButton />
-              </>
-            )}
+            <AuthButton />
+            <WhatsAppButton />
           </div>
         </div>
         <EclipsBluBlur />
