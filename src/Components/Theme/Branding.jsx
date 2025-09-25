@@ -47,12 +47,6 @@ export const Branding = () => {
   return (
     <Container>
       <div className="flex flex-wrap items-center justify-between lg:gap-1 max-w-5xl w-full mx-auto py-5 lg:py-10 mt-4 min-h-[120px]">
-        <h2 className="font-bold text-gray-50 text-[1rem] leading-[1.5rem] sm:text-[2rem] sm:leading-[2.5rem] md:text-[2.5rem] md:leading-[3rem] lg:text-[3rem] lg:leading-[4rem]">
-                   les technologies les plus en vogue
-                </h2>
-                <p className="text-claire">
-                    ✨ les technologies les plus demandées sur le marché
-                </p>
         {/* Loader supprimé */}
         {error && !loading && (
           <div className="w-full flex justify-center items-center text-red-500 text-base">{error}</div>

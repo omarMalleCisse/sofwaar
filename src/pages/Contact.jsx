@@ -113,7 +113,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="info" className="block text-sm font-semibold text-blue-100 mb-1">Message</label>
+                <label htmlFor="info" className="block text-sm font-semibold text-blue-100 mb-1">Votre projet</label>
                 <textarea
                   id="info"
                   name="info"
@@ -121,7 +121,7 @@ const Contact = () => {
                   value={form.info}
                   onChange={handleChange}
                   className="w-full rounded-lg border border-blue-300 bg-[#070620] px-4 py-2 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-blue-700 transition"
-                  placeholder="Votre message"
+                  placeholder="Parlez-nous de votre projet"
                 />
               </div>
             </div>

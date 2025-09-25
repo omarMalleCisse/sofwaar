@@ -36,7 +36,7 @@ export const Pricing = () => {
             <div id="realisations">
                 <Headings title="MES REALISATIONS" subtitle="Quelques projets réalisés sur-mesure pour nos clients" />
                  <div className="flex items-center justify-center m-2.5">
-                        <Button  href={"/portfolio"} theme={"primary"} > Regarde mon Portfolio</Button>
+                        <Button  href={"/portfolio"} className="bg-pink-700 hover:bg-pink-800 text-white border-none" > Voir mon Portfolio</Button>
                     </div>
                 <div className="grid lg:grid-cols-3 gap-6 lg:gap-10 max-w-6xl mx-auto mt-8">
                     {realisations.map((real) => (
