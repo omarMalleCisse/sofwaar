@@ -13,10 +13,12 @@ export const Footer = () => {
                     ))}
                 </div>
                 <div className="space-x-4">
-                    <a href="" target="_blank" rel="noreferrer">Terms & conditions
+                    <a href="" target="_blank" rel="noreferrer">Email
                     </a>
-                    <a href="" target="_blank" rel="noreferrer">Privacy Policy</a>
-
+                    <a href="" target="_blank" rel="noreferrer">bymalle@icloud.com</a>
+                </div>
+                <div>
+                    📞 Téléphone : +221 77 334 96 52
                 </div>
                 <div> c 2025 All right reserved {""}
                     <a href="" target="_blank" rel="noreferrer">Softwaar</a>

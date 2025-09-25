@@ -31,14 +31,11 @@ const Portfolio = () => {
               </span>
             </h1>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+             Je suis Omar Malle Cissé, développeur autodidacte
               Passionné par la création d'expériences numériques exceptionnelles. 
               Je transforme vos idées en solutions web innovantes et performantes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <button className="group bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2">
-                Voir mes projets
-                <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
               <a href="/contact" className="border-2 border-purple-400 text-purple-400 px-8 py-4 rounded-full font-semibold hover:bg-purple-400 hover:text-white transition-all duration-300 text-center">
                 Me contacter
               </a>
@@ -67,9 +64,9 @@ const Portfolio = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Développeur passionné et autodidacte</h3>
               <p className="text-purple-400 font-semibold mb-2">formations continues et de projets stimulants</p>
-              <p className="text-slate-300 mb-4">2022 - 2024</p>
+              <p className="text-slate-300 mb-4">2020 - 2022</p>
               <p className="text-slate-400 leading-relaxed">
-                Spécialisation en développement web et mobile,et gestion de bases de données.
+               Formation en développement web html, css, php et gestion de bases de données.
               </p>
             </div>
 
@@ -80,7 +77,7 @@ const Portfolio = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Bootcamp Full Stack</h3>
               <p className="text-blue-400 font-semibold mb-2">formations en ligne</p>
-              <p className="text-slate-300 mb-4">2020 - 2023</p>
+              <p className="text-slate-300 mb-4">2022 - 2023</p>
               <p className="text-slate-400 leading-relaxed">
                 Formation intensive en JavaScript, React, Node.js, bases de données et déploiement d'applications.
               </p>
@@ -93,7 +90,7 @@ const Portfolio = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-3">Certifications</h3>
               <p className="text-green-400 font-semibold mb-2">Diverses plateformes</p>
-              <p className="text-slate-300 mb-4">2020 - 2025</p>
+              <p className="text-slate-300 mb-4">2024 - 2025</p>
               <p className="text-slate-400 leading-relaxed">
                  des certifications sur Coursera en React, Symfony, Tailwind, Python et création d’API
               </p>
@@ -199,18 +196,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-slate-700 bg-black/20 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-slate-400 mb-4">
-            Prêt à donner vie à votre prochain projet ?
-          </p>
-          <button className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl hover:shadow-purple-500/25 transition-all duration-300">
-            Contactez-moi
-          </button>
-        </div>
-      </footer>
     </div>
   );
 };
