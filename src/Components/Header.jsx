@@ -33,11 +33,11 @@ export const Header = () => {
         theme="primary"
         className="min-w-[60px] px-2 text-xs sm:text-sm"
       >
-        Logout
+        Déconnecter
       </Button>
     ) : (
       <Link to="/login">
-        <Button theme="primary" className="min-w-[60px] px-2 text-xs sm:text-sm">Login</Button>
+        <Button theme="primary" className="min-w-[60px] px-2 text-xs sm:text-sm">Connexion</Button>
       </Link>
     )
   );
